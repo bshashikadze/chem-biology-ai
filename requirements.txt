@@ -131,3 +131,5 @@ websocket-client==1.9.0
 wheel==0.47.0
 widgetsnbextension==4.0.15
 wrapt==2.3.0
+openpyxl==3.1.5
+seaborn==0.13.2
