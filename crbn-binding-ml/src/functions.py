@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.stats import pearsonr
+import pandas as pd
 
 def scatter_plot_fn(y_test, y_pred, method = ""):
     plt.scatter(y_test, y_pred)
@@ -36,3 +37,9 @@ def scatter_plot_fn(y_test, y_pred, method = ""):
     )
     plt.legend()
     plt.show()
+
+
+def read_data(path):
+    df_raw = pd.read_excel(path, skiprows=1)
+    df = df_raw[["Smiles", "Catalog ID", "FP Response"]].rename(columns={"Smiles" : "smiles", "Catalog ID" : "id", "FP Response" : "response"})
+    return df
